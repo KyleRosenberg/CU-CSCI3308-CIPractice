@@ -84,5 +84,7 @@ double coord_2d_area_triangle(const coord_2d_t* a, const coord_2d_t* b, const co
         return;
     }
 
-    return ((a->x-c->x)(b->y-a->y)-(a->x-b->x)(c->y-a->y))/2;
+    double ans = ((a->x-c->x)*(b->y-a->y)-(a->x-b->x)*(c->y-a->y))/2;
+    if (ans<0) ans*=-1;
+    return ans;
 }
